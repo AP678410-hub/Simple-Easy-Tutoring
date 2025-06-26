@@ -10,15 +10,18 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       padding: 0;
-      overflow: auto; /* ✅ Let page scroll */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f0f4fa;
       color: #1a1a1a;
+      overflow: auto; /* ✅ allow scrolling */
+    }
+
+    .layout-wrapper {
       display: flex;
+      min-height: 100vh;
     }
 
     /* Sidebar */
@@ -125,6 +128,7 @@
       border-radius: 18px;
       margin-bottom: 50px;
       box-shadow: 0 4px 18px rgb(0 87 146 / 0.1);
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -241,11 +245,9 @@
       user-select: none;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 920px) {
-      body {
+      .layout-wrapper {
         flex-direction: column;
-        overflow: auto;
       }
 
       .educator-sidebar {
@@ -263,18 +265,22 @@
         height: auto;
         overflow: visible;
       }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 15px 10px;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Your full body content stays the same, so no changes needed here -->
-  <!-- ✅ Just paste in the updated style above and everything will scroll perfectly -->
+  <div class="layout-wrapper">
+    <aside class="educator-sidebar" aria-label="Meet Our Educators">
+      <!-- your sidebar content here (cards) -->
+      <!-- same as before, paste your educator cards here -->
+    </aside>
+
+    <main class="main-content">
+      <!-- your main content stays the same -->
+      <!-- paste all your sections, header, footer etc. here -->
+    </main>
+  </div>
 </body>
 </html>
+
 
