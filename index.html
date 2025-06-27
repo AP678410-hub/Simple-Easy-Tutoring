@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Simple & Easy Tutoring</title>
   <style>
+    /* Reset */
     * {
       box-sizing: border-box;
     }
+
     body {
       margin: 0;
       padding: 0;
@@ -16,19 +18,23 @@
       color: #1a1a1a;
       overflow: auto;
     }
+
     .layout-wrapper {
       display: flex;
       min-height: 100vh;
     }
+
     .educator-sidebar {
       width: 320px;
       background-color: #fff;
       padding: 30px 25px;
       border-right: 3px solid #005792;
       overflow-y: auto;
+      box-shadow: 4px 0 10px rgb(0 0 0 / 0.05);
       display: flex;
       flex-direction: column;
     }
+
     .educator-sidebar h3 {
       font-size: 1.9rem;
       font-weight: 700;
@@ -38,29 +44,44 @@
       letter-spacing: 1.2px;
       text-transform: uppercase;
     }
+
     .educator-card {
       background: #e6f0ff;
       border-radius: 15px;
       padding: 15px 20px;
       margin-bottom: 20px;
+      box-shadow: 0 6px 15px rgb(0 87 146 / 0.15);
       display: flex;
       gap: 15px;
       align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
+
+    .educator-card:hover {
+      box-shadow: 0 12px 25px rgb(0 87 146 / 0.3);
+      transform: translateY(-6px);
+      background: #d6e6ff;
+    }
+
     .educator-card img {
       width: 70px;
       height: 70px;
       border-radius: 50%;
       object-fit: cover;
+      box-shadow: 0 2px 10px rgb(0 87 146 / 0.25);
     }
+
     .educator-info p {
       margin: 4px 0;
       font-size: 0.95rem;
       color: #003057;
     }
+
     .educator-info p strong {
       color: #002341;
     }
+
     .main-content {
       flex: 1;
       overflow-y: auto;
@@ -68,20 +89,26 @@
       padding: 40px 50px 60px;
       display: flex;
       flex-direction: column;
+      box-shadow: -4px 0 15px rgb(0 0 0 / 0.03);
     }
+
     header {
       background: linear-gradient(135deg, #0072ce, #005792);
       color: white;
       padding: 50px 30px;
       border-radius: 20px;
+      box-shadow: 0 10px 30px rgb(0 87 146 / 0.4);
       text-align: center;
       margin-bottom: 40px;
     }
+
     header h1 {
       font-size: 3.3rem;
       margin-bottom: 12px;
       letter-spacing: 2px;
+      text-shadow: 1px 1px 3px rgb(0 0 0 / 0.3);
     }
+
     header p {
       font-size: 1.25rem;
       font-weight: 500;
@@ -89,12 +116,45 @@
       opacity: 0.9;
       font-style: italic;
     }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      background: #e6f0ff;
+      padding: 18px 30px;
+      border-radius: 18px;
+      margin-bottom: 50px;
+      box-shadow: 0 4px 18px rgb(0 87 146 / 0.1);
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #005792;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 8px 18px;
+      border-radius: 12px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: #005792;
+      color: #fff;
+      box-shadow: 0 4px 15px rgb(0 87 146 / 0.5);
+      outline: none;
+    }
+
     .section {
       margin-bottom: 70px;
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
+
     .section h2 {
       color: #003057;
       font-size: 2.4rem;
@@ -104,11 +164,53 @@
       padding-bottom: 10px;
       letter-spacing: 1.1px;
     }
-    .section p {
+
+    .section p,
+    .section ul {
       font-size: 1.1rem;
       line-height: 1.65;
       color: #2d2d2d;
     }
+
+    .section p em {
+      color: #555;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .section ul li {
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .highlight-box {
+      background: #f9fbff;
+      padding: 25px 20px 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgb(0 87 146 / 0.07);
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+      cursor: default;
+      margin-top: -40px;
+      margin-bottom: 80px;
+    }
+
+    .highlight-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgb(0 87 146 / 0.15);
+      background: #e6f0ff;
+    }
+
     footer {
       background: #003057;
       color: white;
@@ -117,18 +219,25 @@
       border-radius: 15px;
       font-size: 1rem;
       letter-spacing: 0.9px;
+      box-shadow: 0 -5px 15px rgb(0 45 79 / 0.6);
+      user-select: none;
     }
+
     @media (max-width: 920px) {
       .layout-wrapper {
         flex-direction: column;
       }
+
       .educator-sidebar {
         width: 100%;
         height: auto;
         border-right: none;
         border-bottom: 3px solid #005792;
         padding: 25px 20px;
+        box-shadow: none;
+        overflow-y: visible;
       }
+
       .main-content {
         padding: 30px 20px 50px;
         height: auto;
@@ -139,31 +248,13 @@
 </head>
 <body>
   <div class="layout-wrapper">
-    <aside class="educator-sidebar">
-      <h3>Meet Our Educators</h3>
-      <article class="educator-card">
-        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&q=80" alt="Portrait of Arjun Patkar" />
-        <div class="educator-info">
-          <p><strong>Name:</strong> Arjun Patkar</p>
-          <p><strong>Email:</strong> arjunpatkar66@gmail.com</p>
-          <p><strong>Subjects:</strong> English, Math</p>
-          <p><strong>Year Levels:</strong> 1–6</p>
-        </div>
-      </article>
-    </aside>
+    <!-- Sidebar and Main Content here -->
     <main class="main-content">
-      <header>
-        <h1>Simple & Easy Tutoring</h1>
-        <p>Nurturing Potential and Inspiring Growth</p>
-      </header>
-      <section class="section">
-        <h2>Subjects We Offer</h2>
-        <p><strong>Currently Available:</strong> We currently offer tutoring in <strong>English</strong> and <strong>Mathematics</strong> only. These subjects form the foundation of our academic program and are taught by experienced, dedicated tutors.</p>
-        <p><strong>Future Expansion:</strong> We are actively working to expand our subject offerings. Stay tuned for additional subjects including Science, Humanities, and Technology in the near future!</p>
+      <!-- Add this stylish section after header or wherever appropriate -->
+      <section class="section highlight-box" tabindex="0">
+        <h2>Important Update</h2>
+        <p><strong>Currently, we are only offering tutoring services in English and Mathematics.</strong> These foundational subjects are essential to academic development and are our top priority during this initial phase. As we grow and expand our educator team, we plan to reintroduce other core subjects such as Science, HASS, and STEM to offer a more comprehensive learning experience. Thank you for your understanding and support!</p>
       </section>
-      <footer>
-        <p>&copy; 2025 Simple & Easy Tutoring. All rights reserved.</p>
-      </footer>
     </main>
   </div>
 </body>
