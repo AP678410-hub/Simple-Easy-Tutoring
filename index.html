@@ -1,1 +1,164 @@
-<!DOCTYPE html> <html lang="en"> <head>   <meta charset="UTF-8" />   <meta name="viewport" content="width=device-width, initial-scale=1" />   <title>Simple & Easy Tutoring</title>   <style>     /* Reset */     * {       box-sizing: border-box;     }      body {       margin: 0;       padding: 0;       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;       background: #f0f4fa;       color: #1a1a1a;       overflow: auto; /* allow scrolling */     }      .layout-wrapper {       display: flex;       min-height: 100vh;     }      /* Sidebar */     .educator-sidebar {       width: 320px;       background-color: #fff;       padding: 30px 25px;       border-right: 3px solid #005792;       overflow-y: auto;       box-shadow: 4px 0 10px rgb(0 0 0 / 0.05);       display: flex;       flex-direction: column;     }      .educator-sidebar h3 {       font-size: 1.9rem;       font-weight: 700;       color: #005792;       margin-bottom: 25px;       text-align: center;       letter-spacing: 1.2px;       text-transform: uppercase;     }      .educator-card {       background: #e6f0ff;       border-radius: 15px;       padding: 15px 20px;       margin-bottom: 20px;       box-shadow: 0 6px 15px rgb(0 87 146 / 0.15);       display: flex;       gap: 15px;       align-items: center;       transition: transform 0.3s ease, box-shadow 0.3s ease;       cursor: default;     }      .educator-card:hover {       box-shadow: 0 12px 25px rgb(0 87 146 / 0.3);       transform: translateY(-6px);       background: #d6e6ff;     }      .educator-card img {       width: 70px;       height: 70px;       border-radius: 50%;       object-fit: cover;       box-shadow: 0 2px 10px rgb(0 87 146 / 0.25);     }      .educator-info p {       margin: 4px 0;       font-size: 0.95rem;       color: #003057;     }      .educator-info p strong {       color: #002341;     }      /* Main Content */     .main-content {       flex: 1;       overflow-y: auto;       background: #fff;       padding: 40px 50px 60px;       display: flex;       flex-direction: column;       box-shadow: -4px 0 15px rgb(0 0 0 / 0.03);     }      header {       background: linear-gradient(135deg, #0072ce, #005792);       color: white;       padding: 50px 30px;       border-radius: 20px;       box-shadow: 0 10px 30px rgb(0 87 146 / 0.4);       text-align: center;       margin-bottom: 40px;     }      header h1 {       font-size: 3.3rem;       margin-bottom: 12px;       letter-spacing: 2px;       text-shadow: 1px 1px 3px rgb(0 0 0 / 0.3);     }      header p {       font-size: 1.25rem;       font-weight: 500;       letter-spacing: 0.9px;       opacity: 0.9;       font-style: italic;     }      nav {       display: flex;       justify-content: center;       gap: 28px;       background: #e6f0ff;       padding: 18px 30px;       border-radius: 18px;       margin-bottom: 50px;       box-shadow: 0 4px 18px rgb(0 87 146 / 0.1);       flex-wrap: wrap;     }      nav a {       text-decoration: none;       color: #005792;       font-weight: 700;       font-size: 1.15rem;       padding: 8px 18px;       border-radius: 12px;       transition: background-color 0.3s ease, color 0.3s ease;       user-select: none;     }      nav a:hover,     nav a:focus {       background-color: #005792;       color: #fff;       box-shadow: 0 4px 15px rgb(0 87 146 / 0.5);       outline: none;     }      .section {       margin-bottom: 70px;       max-width: 900px;       margin-left: auto;       margin-right: auto;     }      .section h2 {       color: #003057;       font-size: 2.4rem;       font-weight: 700;       margin-bottom: 25px;       border-bottom: 3px solid #0072ce;       padding-bottom: 10px;       letter-spacing: 1.1px;     }      .section p,     .section ul {       font-size: 1.1rem;       line-height: 1.65;       color: #2d2d2d;     }      .section p em {       color: #555;       font-style: normal;       font-weight: 600;     }      .section ul {       padding-left: 20px;       margin-top: 10px;     }      .section ul li {       margin-bottom: 8px;       font-weight: 600;     }      .subject-grid {       display: grid;       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));       gap: 28px;     }      .subject,     .age-group,     .highlight-box {       background: #f9fbff;       padding: 25px 20px 30px;       border-radius: 18px;       box-shadow: 0 6px 20px rgb(0 87 146 / 0.07);       transition: transform 0.25s ease, box-shadow 0.3s ease;       cursor: default;     }      .subject:hover,     .age-group:hover,     .highlight-box:hover {       transform: translateY(-8px);       box-shadow: 0 12px 35px rgb(0 87 146 / 0.15);       background: #e6f0ff;     }      .subject img,     .age-group img {       width: 100%;       height: 160px;       object-fit: cover;       border-radius: 12px;       margin-bottom: 18px;       box-shadow: 0 4px 15px rgb(0 87 146 / 0.15);     }      .subject h3,     .age-group h3 {       color: #00497a;       font-weight: 700;       font-size: 1.6rem;       margin-bottom: 14px;     }      footer {       background: #003057;       color: white;       text-align: center;       padding: 28px 20px;       border-radius: 15px;       font-size: 1rem;       letter-spacing: 0.9px;       box-shadow: 0 -5px 15px rgb(0 45 79 / 0.6);       user-select: none;     }      @media (max-width: 920px) {       .layout-wrapper {         flex-direction: column;       }        .educator-sidebar {         width: 100%;         height: auto;         border-right: none;         border-bottom: 3px solid #005792;         padding: 25px 20px;         box-shadow: none;         overflow-y: visible;       }        .main-content {         padding: 30px 20px 50px;         height: auto;         overflow: visible;       }     }   </style> </head> <body>   <div class="layout-wrapper">     <aside class="educator-sidebar" aria-label="Meet Our Educators">       <h3>Meet Our Educators</h3>        <article class="educator-card" tabindex="0">         <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&q=80" alt="Portrait of Arjun Patkar" />         <div class="educator-info">           <p><strong>Name:</strong> Arjun Patkar</p>           <p><strong>Email:</strong> arjunpatkar66@gmail.com</p>           <p><strong>Subjects:</strong> English, Math</p>           <p><strong>Year Levels:</strong> 1–6</p>         </div>       </article>        <article class="educator-card" tabindex="0">         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="Portrait of Mikael Zahid" />         <div class="educator-info">           <p><strong>Name:</strong> Mikael Zahid</p>           <p><strong>Email:</strong> mikaezahid@example.com</p>           <p><strong>Subjects:</strong>  English & Math</p>           <p><strong>Year Levels:</strong> 1-4</p>         </div>       </article>        <article class="educator-card" tabindex="0">         <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=80&q=80" alt="Portrait of Zahin Raki" />         <div class="educator-info">           <p><strong>Name:</strong> Zahin Raki</p>           <p><strong>Email:</strong> milkisgood102@gmail.com</p>           <p><strong>Subjects:</strong> Math</p>           <p><strong>Year Levels:</strong> 1-4</p>         </div>       </article>        <main class="main-content">       <header>         <h1>Simple & Easy Tutoring</h1>         <p>Nurturing Potential and Inspiring Growth</p>       </header>        <nav role="navigation" aria-label="Primary Navigation">         <a href="#about">About</a>         <a href="#subjects">Subjects</a>         <a href="#groups">Groups</a>         <a href="#strive">STRIVE</a>         <a href="#referral">Referral</a>         <a href="#trial">Trial</a>         <a href="#enrol">Enrol</a>         <a href="#contact">Contact</a>       </nav>        <section id="about" class="section" tabindex="0">         <h2>About Us</h2>         <p>We provide tailored, high-quality education programs for students in Years 1 to 6. Our passionate Year 7 tutors foster curiosity, confidence, and academic growth through engaging lessons and interactive support.</p>         <p>Each session begins with a short review of what was covered in the previous lesson, helping reinforce learning and identify areas that need more attention.</p>         <p><strong>Payment:</strong> $15/hour for 1-on-1 sessions, $10/hour for group classes. (Per Person)</p>         <p><strong>Subscriptions:</strong> 1 Month – $125 | 1 Year – $600</p>         <p><em>Please note: Educational materials and textbooks are not provided as part of our tuition service. We kindly ask parents to acquire any necessary textbooks independently to support their child’s learning.</em></p>       </section>        <section id="subjects" class="section" tabindex="0">         <h2>Subjects We Offer</h2>         <div class="subject-grid">           <article class="subject" tabindex="0">             <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="English subject illustration">             <h3>English</h3>             <p>Grammar, comprehension, punctuation, writing, spelling, and vocabulary building.</p>           </article>           <article class="subject" tabindex="0">             <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Mathematics subject illustration">             <h3>Mathematics</h3>             <p>Concepts, problem solving, mental arithmetic, and number fluency.</p>           </article>           <article class="subject" tabindex="0">             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Science subject illustration">             <h3>Science</h3>             <p>Inquiry-based learning, STEM experiments, and scientific literacy.</p>           </article>           <article class="subject" tabindex="0">             <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80" alt="HASS subject illustration">             <h3>Humanities & Social Sciences</h3>             <p>History, geography, civics and economics with Australian context.</p>           </article>           <article class="subject" tabindex="0">             <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Technology and STEM subject illustration">             <h3>Technology & STEM</h3>             <p>Coding, robotics, digital literacy and design thinking.</p>           </article>         </div>       </section>        <section id="groups" class="section" tabindex="0">         <h2>Age Group Programs</h2>         <div class="subject-grid">           <article class="age-group" tabindex="0">             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Years 1 to 3 children">             <h3>Years 1-2</h3>             <p><strong>Educator:</strong> Mikael Zahid, Zahin Raki & Arjun Patkar</p>             <p><strong>Subjects:</strong> All Subjects</p>           </article>           <article class="age-group" tabindex="0">             <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Years 4 to 6 children">             <h3>Years 3-4</h3>             <ul>               <li>Zahin Raki – Math</li>               <li>Mikael Zahid – Math, English</li>               <li>Arjun Patkar – Math, English</li>             </ul>           </article>         </div>       </section>        <section id="strive" class="section highlight-box" tabindex="0">         <h2>STRIVE Program</h2>         <p><strong>S.T.R.I.V.E.</strong> represents our core commitment to student success: <strong>Support, Targeted Learning, Resilience, Improvement, Vision, and Encouragement. This program is thoughtfully designed to empower students who may be experiencing academic challenges by providing consistent, focused instruction across all core subjects on a weekly basis. Through a nurturing environment and personalized support, STRIVE helps students build lasting confidence, strengthen essential skills, and develop a positive mindset towards learning.</p>         <p><strong>Cost:</strong> $75 per week</p>         <p><em>Students enrolled in STRIVE benefit from small group settings, personalized progress tracking, and motivational workshops designed to foster a growth mindset.</em></p>       </section>        <section id="strive-program" class="section highlight-box" tabindex="0">         <h2>Strive Referral Program</h2>         <p>At Simple & Easy Tutoring, we appreciate your support and trust. Our Strive Referral Program rewards you for helping us grow our community of learners!</p>          <h3>How It Works</h3>         <ul>           <li><strong>Refer a Friend:</strong> Help others discover the value of quality education,  share the advantages of our personalised tutoring services with friends and family, and let them experience the difference exceptional support can make in a student’s learning journey. </li>           <li><strong>Your Reward:</strong> Enjoy a 15% discount on your next tutoring session for every successful referral.</li>           <li><strong>Friend’s Reward:</strong> Your referred friend also receives 10% off their first tutoring session.</li>           <li><strong>No Free Sessions:</strong> Please note, free sessions are not part of the referral rewards.</li>         </ul>          <h3>Additional Benefits</h3>         <ul>           <li><strong>Stack Discounts:</strong> You can accumulate discounts from multiple referrals and apply them to future sessions.</li>           <li><strong>Exclusive Events:</strong> Access to special workshops and group activities reserved for our valued Strive Program members.</li>           <li><strong>Priority Booking:</strong> Early access to new session times and limited-availability programs.</li>         </ul>          <p><em>To participate, simply ask your referred friend to mention your name during their sign-up. Discounts will be applied automatically to your next session invoice.</em></p>       </section>        <section id="trial" class="section" tabindex="0">         <h2>Free Trial Session</h2>         <p>We offer a free trial session for new students to experience our tutoring approach and meet their educator.</p>         <p><em>Note: The trial session is a one-time opportunity per student and must be booked in advance.</em></p>       </section>        <section id="enrol" class="section" tabindex="0">         <h2>Enrolment</h2>         <p>Ready to start? Enrol your child today by contacting us via email or phone. Our friendly team will assist with scheduling and payment options.</p>       </section>        <section id="contact" class="section" tabindex="0">         <h2>Contact Us</h2>         <p>Email: info@simpleandeasytutoring.com</p>         <p>Phone: (123) 456-7890</p>       </section>        <footer>         <p>© 2025 Simple & Easy Tutoring. All rights reserved.</p>       </footer>     </main>   </div> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple & Easy Tutoring</title>
+  <style>
+    /* --- [CSS STYLES REMOVED FOR BREVITY] --- */
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <aside class="educator-sidebar">
+      <h3>Meet Our Educators</h3>
+      <article class="educator-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&q=80" alt="Portrait of Arjun Patkar" />
+        <div class="educator-info">
+          <p><strong>Name:</strong> Arjun Patkar</p>
+          <p><strong>Email:</strong> arjunpatkar66@gmail.com</p>
+          <p><strong>Subjects:</strong> English, Math</p>
+          <p><strong>Year Levels:</strong> 1–6</p>
+        </div>
+      </article>
+      <article class="educator-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="Portrait of Mikael Zahid" />
+        <div class="educator-info">
+          <p><strong>Name:</strong> Mikael Zahid</p>
+          <p><strong>Email:</strong> mikaezahid@example.com</p>
+          <p><strong>Subjects:</strong>  English & Math</p>
+          <p><strong>Year Levels:</strong> 1-4</p>
+        </div>
+      </article>
+      <article class="educator-card" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=80&q=80" alt="Portrait of Zahin Raki" />
+        <div class="educator-info">
+          <p><strong>Name:</strong> Zahin Raki</p>
+          <p><strong>Email:</strong> milkisgood102@gmail.com</p>
+          <p><strong>Subjects:</strong> Math</p>
+          <p><strong>Year Levels:</strong> 1-4</p>
+        </div>
+      </article>
+    </aside>
+    <main class="main-content">
+      <header>
+        <h1>Simple & Easy Tutoring</h1>
+        <p>Nurturing Potential and Inspiring Growth</p>
+      </header>
+      <section class="section highlight-box" tabindex="0">
+        <h2>Important Update</h2>
+        <p><strong>Currently, we are only offering tutoring services in English and Mathematics.</strong> These foundational subjects are essential to academic development and are our top priority during this initial phase. As we grow and expand our educator team, we plan to reintroduce other core subjects such as Science, HASS, and STEM to offer a more comprehensive learning experience. Thank you for your understanding and support!</p>
+      </section>
+      <nav role="navigation" aria-label="Primary Navigation">
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#groups">Groups</a>
+        <a href="#strive">STRIVE</a>
+        <a href="#referral">Referral</a>
+        <a href="#trial">Trial</a>
+        <a href="#enrol">Enrol</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <section id="about" class="section" tabindex="0">
+        <h2>About Us</h2>
+        <p>We provide tailored, high-quality education programs for students in Years 1 to 6. Our passionate Year 7 tutors foster curiosity, confidence, and academic growth through engaging lessons and interactive support.</p>
+        <p>Each session begins with a short review of what was covered in the previous lesson, helping reinforce learning and identify areas that need more attention.</p>
+        <p><strong>Payment:</strong> $15/hour for 1-on-1 sessions, $10/hour for group classes. (Per Person)</p>
+        <p><strong>Subscriptions:</strong> 1 Month – $125 | 1 Year – $600</p>
+        <p><em>Please note: Educational materials and textbooks are not provided as part of our tuition service. We kindly ask parents to acquire any necessary textbooks independently to support their child’s learning.</em></p>
+      </section>
+      <section id="subjects" class="section" tabindex="0">
+        <h2>Subjects We Offer</h2>
+        <div class="subject-grid">
+          <article class="subject" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="English subject illustration">
+            <h3>English</h3>
+            <p>Grammar, comprehension, punctuation, writing, spelling, and vocabulary building.</p>
+          </article>
+          <article class="subject" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Mathematics subject illustration">
+            <h3>Mathematics</h3>
+            <p>Concepts, problem solving, mental arithmetic, and number fluency.</p>
+          </article>
+          <article class="subject" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Science subject illustration">
+            <h3>Science</h3>
+            <p>Inquiry-based learning, STEM experiments, and scientific literacy.</p>
+          </article>
+          <article class="subject" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80" alt="HASS subject illustration">
+            <h3>Humanities & Social Sciences</h3>
+            <p>History, geography, civics and economics with Australian context.</p>
+          </article>
+          <article class="subject" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Technology and STEM subject illustration">
+            <h3>Technology & STEM</h3>
+            <p>Coding, robotics, digital literacy and design thinking.</p>
+          </article>
+        </div>
+      </section>
+      <section id="groups" class="section" tabindex="0">
+        <h2>Age Group Programs</h2>
+        <div class="subject-grid">
+          <article class="age-group" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Years 1 to 3 children">
+            <h3>Years 1-2</h3>
+            <p><strong>Educator:</strong> Mikael Zahid, Zahin Raki & Arjun Patkar</p>
+            <p><strong>Subjects:</strong> All Subjects</p>
+          </article>
+          <article class="age-group" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Years 4 to 6 children">
+            <h3>Years 3-4</h3>
+            <ul>
+              <li>Zahin Raki – Math</li>
+              <li>Mikael Zahid – Math, English</li>
+              <li>Arjun Patkar – Math, English</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="strive" class="section highlight-box" tabindex="0">
+        <h2>STRIVE Program</h2>
+        <p><strong>S.T.R.I.V.E.</strong> represents our core commitment to student success: <strong>Support, Targeted Learning, Resilience, Improvement, Vision, and Encouragement.</strong> This program is thoughtfully designed to empower students who may be experiencing academic challenges by providing consistent, focused instruction across all core subjects on a weekly basis. Through a nurturing environment and personalized support, STRIVE helps students build lasting confidence, strengthen essential skills, and develop a positive mindset towards learning.</p>
+        <p><strong>Cost:</strong> $75 per week</p>
+        <p><em>Students enrolled in STRIVE benefit from small group settings, personalized progress tracking, and motivational workshops designed to foster a growth mindset.</em></p>
+      </section>
+      <section id="referral" class="section highlight-box" tabindex="0">
+        <h2>Strive Referral Program</h2>
+        <p>At Simple & Easy Tutoring, we appreciate your support and trust. Our Strive Referral Program rewards you for helping us grow our community of learners!</p>
+        <h3>How It Works</h3>
+        <ul>
+          <li><strong>Refer a Friend:</strong> Help others discover the value of quality education, share the advantages of our personalised tutoring services with friends and family.</li>
+          <li><strong>Your Reward:</strong> Enjoy a 15% discount on your next tutoring session for every successful referral.</li>
+          <li><strong>Friend’s Reward:</strong> Your referred friend also receives 10% off their first tutoring session.</li>
+          <li><strong>No Free Sessions:</strong> Please note, free sessions are not part of the referral rewards.</li>
+        </ul>
+        <h3>Additional Benefits</h3>
+        <ul>
+          <li><strong>Stack Discounts:</strong> You can accumulate discounts from multiple referrals and apply them to future sessions.</li>
+          <li><strong>Exclusive Events:</strong> Access to special workshops and group activities reserved for our valued Strive Program members.</li>
+          <li><strong>Priority Booking:</strong> Early access to new session times and limited-availability programs.</li>
+        </ul>
+        <p><em>To participate, simply ask your referred friend to mention your name during their sign-up. Discounts will be applied automatically to your next session invoice.</em></p>
+      </section>
+      <section id="trial" class="section" tabindex="0">
+        <h2>Free Trial Session</h2>
+        <p>We offer a free trial session for new students to experience our tutoring approach and meet their educator.</p>
+        <p><em>Note: The trial session is a one-time opportunity per student and must be booked in advance.</em></p>
+      </section>
+      <section id="enrol" class="section" tabindex="0">
+        <h2>Enrolment</h2>
+        <p>Ready to start? Enrol your child today by contacting us via email or phone. Our friendly team will assist with scheduling and payment options.</p>
+      </section>
+      <section id="contact" class="section" tabindex="0">
+        <h2>Contact Us</h2>
+        <p>Email: info@simpleandeasytutoring.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </section>
+      <footer>
+        <p>© 2025 Simple & Easy Tutoring. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
